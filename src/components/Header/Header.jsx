@@ -23,7 +23,6 @@ function Header() {
 
         <HeaderContainer>
             <img src={logo} style={{width: 'auto'}} alt="Result" />
-
             <span className="col">Время: { now.toLocaleTimeString() }</span>
         </HeaderContainer>
     )
