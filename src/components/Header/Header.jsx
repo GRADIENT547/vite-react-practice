@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import logo from '/vite.svg'
 import { styled } from 'styled-components'
 
@@ -16,8 +16,16 @@ const HeaderContainer = styled.header`
 function Header() {
 
     const [now, setNow] = useState(new Date())
+        
+    useEffect(() => {
+        const interval = setInterval(() => setNow(new Date()), 1000)
 
-    setInterval(() => setNow(new Date()), 1000)
+        return () => ( 
+            clearInterval(interval)
+        )
+    }, [])
+
+    
 
     return (
 
